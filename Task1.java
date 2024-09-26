@@ -13,7 +13,7 @@ public class Task1 {
             int totalAttempt = 5;
             int attempt = 0;
             int guess = -1;
-
+           System.out.println(n);
             System.out.println("You have " + totalAttempt + " attempts to guess the number.");
 
             while (attempt < totalAttempt && guess != n) {
@@ -28,6 +28,7 @@ public class Task1 {
                 } else {
                     System.out.println("Your guess is correct!");
                     score += 10;
+                    break;
                 }
             }
 
@@ -40,10 +41,8 @@ public class Task1 {
             System.out.print("Do you want to play again? (yes/no): ");
             String playAgain = sc.nextLine();
 
-            if (playAgain.equalsIgnoreCase("yes")) {
-                tryAgain = true;
-            } else {
-                tryAgain = false;
+            tryAgain = playAgain.equalsIgnoreCase("yes");
+            if (!tryAgain) {
                 System.out.println("Well done! Your final score is: " + score);
             }
         }
